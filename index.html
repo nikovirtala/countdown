@@ -1,0 +1,24 @@
+<html>
+<head>
+  <link type="text/css" rel="stylesheet" href="clock_assets/flipclock.css" />
+</head>
+<body>
+  <div class="clock-builder-output"></div>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script type="text/javascript" src="clock_assets/flipclock.js"></script>
+  <style text="text/css">body .flip-clock-wrapper ul li a div div.inn, body .flip-clock-small-wrapper ul li a div div.inn { color: #CCCCCC; background-color: #333333; } body .flip-clock-dot, body .flip-clock-small-wrapper .flip-clock-dot { background: #323434; } body .flip-clock-wrapper .flip-clock-meridium a, body .flip-clock-small-wrapper .flip-clock-meridium a { color: #323434; }</style>
+  <script type="text/javascript">
+  $(function(){
+  	FlipClock.Lang.Custom = { days:'Days', hours:'Hours', minutes:'Minutes', seconds:'Seconds' };
+  	var opts = {
+  		clockFace: 'DailyCounter',
+  		countdown: true,
+  		language: 'Custom'
+  	};
+  	var countdown = 1499432400 - ((new Date().getTime())/1000); // from: 07/07/2017 04:00 pm +0300
+  	countdown = Math.max(1, countdown);
+  	$('.clock-builder-output').FlipClock(countdown, opts);
+  });
+  </script>
+</body>
+</html>
